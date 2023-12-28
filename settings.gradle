@@ -1,0 +1,4 @@
+rootProject.name = 'jsbr'
+
+include(':common')
+include(':core')
