@@ -1,6 +1,10 @@
+import com.vanniktech.maven.publish.SonatypeHost
+
 plugins {
     id 'java'
     id "io.spring.dependency-management" version "1.1.4"
+    id "com.vanniktech.maven.publish" version "0.29.0"
+    id "signing"
 }
 
 allprojects {
@@ -13,6 +17,8 @@ subprojects {
     apply {
         plugin('java')
         plugin("io.spring.dependency-management")
+        plugin("com.vanniktech.maven.publish")
+        plugin("signing")
     }
 
     group = 'com.jsbr'
@@ -41,5 +47,42 @@ project(':common') {
 project(':core') {
     dependencies {
         implementation(project(':common'))
+    }
+
+    signing {
+        useGpgCmd()
+        sign publishing.publications
+    }
+
+    mavenPublishing {
+        publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+
+        coordinates("io.github.woogiekim", "jsbr", "1.0.0")
+
+        pom {
+            name = "jsbr"
+            description = "jsbr"
+            inceptionYear = "2024"
+            url = "https://github.com/woogiekim"
+            licenses {
+                license {
+                    name = "The Apache License, Version 2.0"
+                    url = "https://www.apache.org/licenses/LICENSE-2.0.txt"
+                    distribution = "https://www.apache.org/licenses/LICENSE-2.0.txt"
+                }
+            }
+            developers {
+                developer {
+                    id = "woogiekim"
+                    name = "Taewook Kim"
+                    url = "https://github.com/woogiekim"
+                }
+            }
+            scm {
+                url = "https://github.com/woogiekim"
+                connection = "scm:git:git://github.com/woogiekim"
+                developerConnection = "scm:git:ssh://git@github.com/woogiekim"
+            }
+        }
     }
 }
