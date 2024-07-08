@@ -1,6 +1,6 @@
-package com.jsbr.core.repository.support.resolver;
+package com.jsbr.repository.resolver;
 
-import com.jsbr.core.repository.support.FieldSource;
+import com.jsbr.repository.FieldSource;
 import jakarta.persistence.DiscriminatorValue;
 import java.lang.reflect.Field;
 

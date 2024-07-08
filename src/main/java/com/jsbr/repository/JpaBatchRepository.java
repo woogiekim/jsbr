@@ -1,4 +1,4 @@
-package com.jsbr.core.repository;
+package com.jsbr.repository;
 
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;

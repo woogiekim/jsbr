@@ -1,6 +1,6 @@
-package com.jsbr.core.repository.support;
+package com.jsbr.repository;
 
-import com.jsbr.core.repository.support.resolver.FieldSourceResolver;
+import com.jsbr.repository.resolver.FieldSourceResolver;
 import jakarta.persistence.Column;
 import java.util.List;
 import org.apache.commons.lang3.reflect.FieldUtils;

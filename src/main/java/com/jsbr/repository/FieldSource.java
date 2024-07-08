@@ -1,4 +1,4 @@
-package com.jsbr.core.repository.support;
+package com.jsbr.repository;
 
 public record FieldSource(String name, Object value) {
 

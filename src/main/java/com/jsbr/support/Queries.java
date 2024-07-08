@@ -1,13 +1,13 @@
-package com.jsbr.common.support;
-
-import static com.jsbr.common.support.Strings.lenientFormat;
-import static org.apache.commons.lang3.StringUtils.containsAnyIgnoreCase;
+package com.jsbr.support;
 
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+
+import static com.jsbr.support.Strings.lenientFormat;
+import static org.apache.commons.lang3.StringUtils.containsAnyIgnoreCase;
 
 public final class Queries {
 

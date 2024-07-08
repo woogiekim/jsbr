@@ -1,14 +1,14 @@
-package com.jsbr.core.repository.support.resolver;
+package com.jsbr.repository.resolver;
 
-import static com.jsbr.common.support.Strings.toSnakeCase;
-
-import com.jsbr.core.repository.support.FieldSource;
+import com.jsbr.repository.FieldSource;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.function.Predicate;
 import org.apache.commons.lang3.reflect.FieldUtils;
+
+import static com.jsbr.support.Strings.toSnakeCase;
 
 public class RelationFieldSourceResolver extends AbstractFieldSourceResolver {
 

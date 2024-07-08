@@ -1,15 +1,8 @@
-package com.jsbr.core.repository;
+package com.jsbr.repository;
 
-import static com.jsbr.common.support.Queries.generateMultiInsertQuery;
-import static com.jsbr.common.support.Queries.generateMultiUpdateQuery;
-import static com.jsbr.common.support.Strings.toSnakeCase;
-
-import com.jsbr.core.repository.support.DefaultFieldSourcesGenerator;
-import com.jsbr.core.repository.support.FieldSources;
-import com.jsbr.core.repository.support.FieldSourcesGenerator;
-import com.jsbr.core.repository.support.resolver.DefaultFieldSourceResolver;
-import com.jsbr.core.repository.support.resolver.InheritanceFieldSourceResolver;
-import com.jsbr.core.repository.support.resolver.RelationFieldSourceResolver;
+import com.jsbr.repository.resolver.DefaultFieldSourceResolver;
+import com.jsbr.repository.resolver.InheritanceFieldSourceResolver;
+import com.jsbr.repository.resolver.RelationFieldSourceResolver;
 import jakarta.persistence.EntityManager;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -19,6 +12,10 @@ import java.util.Set;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.support.JpaEntityInformation;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
+
+import static com.jsbr.support.Queries.generateMultiInsertQuery;
+import static com.jsbr.support.Queries.generateMultiUpdateQuery;
+import static com.jsbr.support.Strings.toSnakeCase;
 
 public class SimpleJpaBatchRepository<T, ID extends Serializable> extends SimpleJpaRepository<T, ID> implements
         JpaBatchRepository<T, ID>, JpaRepository<T, ID> {

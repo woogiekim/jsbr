@@ -1,4 +1,4 @@
-package com.jsbr.common.support;
+package com.jsbr.support;
 
 public final class Strings {
 
